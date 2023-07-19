@@ -10,6 +10,7 @@
     "new": "node script/new.js",
     "patch": "script/patch.sh",
     "cc": "script/cc.sh",
+    "json": "script/json.sh",
     "pack": "script/pack.sh",
     "serve": "script/serve.sh"
   },
