@@ -6,6 +6,7 @@
     "build": "npm run cc && tsc && npm run pack",
     "watch": "tsc --watch",
     "dev": "node dist/index.js",
+    "prod": "node dist/tulip-wasm.js",
     "new": "node script/new.js",
     "patch": "script/patch.sh",
     "cc": "script/cc.sh",
