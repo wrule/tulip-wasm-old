@@ -137,3 +137,4 @@ output/
 *.tar.gz
 
 tulip.ts
+indicators.json
