@@ -9,6 +9,7 @@
     "new": "node script/new.js",
     "patch": "script/patch.sh",
     "cc": "script/cc.sh",
+    "pack": "script/pack.sh",
     "serve": "script/serve.sh"
   },
   "license": "MIT",
