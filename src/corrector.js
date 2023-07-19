@@ -1,4 +1,4 @@
-import fs from 'fs';
+const fs = require('fs');
 
 const tasks = {
   'add': (indicator) => indicator.input_names = ['real1', 'real2'],
