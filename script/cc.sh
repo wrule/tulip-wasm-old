@@ -19,3 +19,7 @@ emcc -O3 c/index.c c/tiamalgamation.c -o dist/tulip.js \
     "_run_task",
     "_run"
   ]'
+echo '// @ts-nocheck' > src/tulip.ts
+echo 'export function tulip() {' >> src/tulip.ts
+cat dist/tulip.js >> src/tulip.ts
+echo 'return Module; }' >> src/tulip.ts
