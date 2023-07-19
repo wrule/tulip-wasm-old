@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm run cc && tsc && npm run pack",
+    "build": "npm run cc && npm run json && tsc && npm run pack",
     "watch": "tsc --watch",
     "dev": "node dist/index.js",
     "prod": "node dist/tulip-wasm.js",
