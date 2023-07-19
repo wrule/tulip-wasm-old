@@ -1,0 +1,20 @@
+{
+  "name": "tulip-wasm",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "dev": "node dist/index.js",
+    "new": "node script/new.js",
+    "patch": "script/patch.sh"
+  },
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@types/node": "18.16.1",
+    "dayjs": "1.11.9",
+    "global-agent": "3.0.0",
+    "typescript": "5.1.6"
+  }
+}
