@@ -7,7 +7,8 @@
     "watch": "tsc --watch",
     "dev": "node dist/index.js",
     "new": "node script/new.js",
-    "patch": "script/patch.sh"
+    "patch": "script/patch.sh",
+    "cc": "script/cc.sh"
   },
   "license": "MIT",
   "private": false,
