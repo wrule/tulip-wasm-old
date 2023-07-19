@@ -1,5 +1,5 @@
 #!/bin/bash
-emcc -O3 c/index.c c/tiamalgamation.c -o dist/tulind.js \
+emcc -O3 c/index.c c/tiamalgamation.c -o dist/tulip.js \
   -s SINGLE_FILE=1 \
   -s ALLOW_MEMORY_GROWTH=1 \
   -s EXPORTED_FUNCTIONS='[
