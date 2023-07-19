@@ -9,7 +9,7 @@
     "new": "node script/new.js",
     "patch": "script/patch.sh",
     "cc": "script/cc.sh",
-    "serve": "cd dist && live-server"
+    "serve": "script/serve.sh"
   },
   "license": "MIT",
   "private": false,
