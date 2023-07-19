@@ -1,2 +1,8 @@
+import tulip from './tulip';
 
-console.log('hello world!');
+function main() {
+  const a = tulip();
+  console.log(a);
+}
+
+main();
