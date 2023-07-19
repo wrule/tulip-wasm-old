@@ -1,5 +1,5 @@
 #!/bin/bash
-emcc -O3 c/index.c c/tiamalgamation.c -o dist/tulip.js \
+emcc -O3 c/index.c c/tiamalgamation.c -o dist/emcc-tulip.js \
   -s SINGLE_FILE=1 \
   -s ALLOW_MEMORY_GROWTH=1 \
   -s EXPORTED_FUNCTIONS='[
@@ -21,5 +21,5 @@ emcc -O3 c/index.c c/tiamalgamation.c -o dist/tulip.js \
   ]'
 echo '// @ts-nocheck' > src/tulip.ts
 echo 'export function tulip() {' >> src/tulip.ts
-cat dist/tulip.js >> src/tulip.ts
+cat dist/emcc-tulip.js >> src/tulip.ts
 echo 'return Module; }' >> src/tulip.ts
