@@ -1,7 +1,9 @@
 #!/bin/bash
 mkdir -p dist
-emcc -O3 c/index.c c/tiamalgamation.c -o dist/emcc_tulip_wasm.js \
+emcc -O3 c/index.c c/tiamalgamation.c -o dist/tulip_wasm_js.js \
   -s SINGLE_FILE=1 \
+  -s MODULARIZE=1 \
+  -s EXPORT_NAME='tulip_wasm_js' \
   -s ALLOW_MEMORY_GROWTH=1 \
   -s EXPORTED_FUNCTIONS='[
     "_free_task",
@@ -20,7 +22,3 @@ emcc -O3 c/index.c c/tiamalgamation.c -o dist/emcc_tulip_wasm.js \
     "_run_task",
     "_run"
   ]'
-echo '// @ts-nocheck' > src/tulip_wasm.ts
-echo 'export default function tulip() {' >> src/tulip_wasm.ts
-cat dist/emcc_tulip_wasm.js >> src/tulip_wasm.ts
-echo 'return Module; }' >> src/tulip_wasm.ts
