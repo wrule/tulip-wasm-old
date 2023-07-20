@@ -1,9 +1,8 @@
 #!/bin/bash
-mkdir -p dist
-emcc -O3 c/index.c c/tiamalgamation.c -o dist/tulip_wasm_js.js \
+emcc -O3 c/index.c c/tiamalgamation.c -o src/tulip_wasm.js \
   -s SINGLE_FILE=1 \
   -s MODULARIZE=1 \
-  -s EXPORT_NAME='tulip_wasm_js' \
+  -s EXPORT_NAME='tulip_wasm' \
   -s ALLOW_MEMORY_GROWTH=1 \
   -s EXPORTED_FUNCTIONS='[
     "_free_task",
