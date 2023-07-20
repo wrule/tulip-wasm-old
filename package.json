@@ -11,6 +11,7 @@
     "patch": "script/patch.sh",
     "cc": "script/cc.sh",
     "json": "script/json.sh",
+    "code": "ts-node src/code.ts",
     "pack": "script/pack.sh",
     "serve": "script/serve.sh"
   },
