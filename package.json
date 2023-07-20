@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run cc && npm run json && tsc && npm run pack",
     "watch": "tsc --watch",
-    "dev": "node dist/index.js",
+    "dev": "node dist/dev.js",
     "prod": "node dist/tulip-wasm.js",
     "new": "node script/new.js",
     "patch": "script/patch.sh",
