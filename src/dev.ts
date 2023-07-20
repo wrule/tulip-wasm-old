@@ -13,4 +13,9 @@ const isWebWorker =
   typeof self === 'object' &&
   self.constructor &&
   self.constructor.name === 'DedicatedWorkerGlobalScope';
-const env: any = null;
+
+let env: any = null;
+if (isBrowser) env = window;
+if (isNode) env = global;
+if (isWebWorker) env = self;
+if (env) env.tulip = tulip;
