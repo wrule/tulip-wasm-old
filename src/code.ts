@@ -1,4 +1,6 @@
+import fs from 'fs';
 import { Indicator } from './meta';
+import indicators from './indicators.json';
 
 export
 class Code {
@@ -37,7 +39,7 @@ class Code {
  */
 export
 async function ${this.ind.name}(${this.argsCode}) {
-  const outputs = run_alone(tulip, ${this.ind.index}, [${
+  const outputs = await run_alone(tulip, ${this.ind.index}, [${
     this.names(this.ind.input_names, '')
   }], [${
     this.names(this.ind.option_names, this.options ? 'options' : '')
@@ -50,3 +52,14 @@ async function ${this.ind.name}(${this.argsCode}) {
     `.trim();
   }
 }
+
+function main() {
+  const full_code = `
+import { tulip, run_alone } from './meta';
+
+${indicators.map((ind) => new Code(ind).Code()).join('\n\n')}
+  `.trim() + '\n';
+  fs.writeFileSync('src/index.ts', full_code, 'utf8');
+}
+
+main();
