@@ -1,3 +1,4 @@
+import tulip_wasm from './tulip_wasm';
 
 export
 interface TulindWASM {
@@ -40,6 +41,9 @@ interface TulindWASM {
   _run_task: (task_index: number) => void,
   _run: (start_index: number, end_index: number) => void,
 }
+
+export
+const tulip: TulindWASM = tulip_wasm();
 
 export
 function run_alone(
