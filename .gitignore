@@ -136,6 +136,6 @@ output/
 *.zip
 *.tar.gz
 
-src/index.ts
 tulip_wasm.js
 indicators.json
+src/indicators.ts

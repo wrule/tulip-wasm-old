@@ -59,7 +59,7 @@ import { tulip, run_alone } from './meta';
 
 ${indicators.map((ind) => new Code(ind).Code()).join('\n\n')}
   `.trim() + '\n';
-  fs.writeFileSync('src/index.ts', full_code, 'utf8');
+  fs.writeFileSync('src/indicators.ts', full_code, 'utf8');
 }
 
 main();
