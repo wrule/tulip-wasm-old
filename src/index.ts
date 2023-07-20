@@ -1,8 +1,6 @@
-import tulip from './tulip';
 
 function main() {
-  const a = tulip();
-  console.log(a);
+  console.log('你好，世界');
 }
 
 main();
