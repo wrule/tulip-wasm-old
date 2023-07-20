@@ -36,8 +36,8 @@ class Code {
  * ${this.ind.full_name}
  */
 export
-function ${this.ind.name}(${this.argsCode}) {
-  const outputs = run_alone(tulind, ${this.ind.index}, [${
+async function ${this.ind.name}(${this.argsCode}) {
+  const outputs = run_alone(tulip, ${this.ind.index}, [${
     this.names(this.ind.input_names, '')
   }], [${
     this.names(this.ind.option_names, this.options ? 'options' : '')
