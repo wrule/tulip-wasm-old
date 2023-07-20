@@ -57,7 +57,7 @@ interface TulindWASM {
 }
 
 export
-const tulip: TulindWASM = tulip_wasm();
+const tulip: () => Promise<TulindWASM> = tulip_wasm;
 
 export
 function run_alone(
