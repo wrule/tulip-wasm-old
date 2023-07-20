@@ -136,5 +136,5 @@ output/
 *.zip
 *.tar.gz
 
-tulip.ts
+tulip_wasm.ts
 indicators.json
