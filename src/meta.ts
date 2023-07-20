@@ -1,6 +1,20 @@
 import tulip_wasm from './tulip_wasm';
 
 export
+interface Indicator {
+  index: number;
+  name: string;
+  full_name: string;
+  type: number;
+  inputs: number;
+  options: number;
+  outputs: number;
+  input_names: string[];
+  option_names: string[];
+  output_names: string[];
+}
+
+export
 interface TulindWASM {
   _free_task: (task_index: number) => void;
   _free_current: () => void;
