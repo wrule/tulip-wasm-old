@@ -1,5 +1,5 @@
-import * as tulip from './indicators.ts';
-export * from './indicators.ts';
+import * as tulip from './indicators';
+export * from './indicators';
 
 const isBrowser =
   typeof window !== 'undefined' && typeof window.document !== 'undefined';
