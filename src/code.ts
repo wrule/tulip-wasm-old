@@ -1,4 +1,4 @@
-import { Indicator } from './indicator';
+import { Indicator } from './meta';
 
 export
 class Code {
