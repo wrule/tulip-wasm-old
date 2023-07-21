@@ -18,5 +18,6 @@ const Global = (() => {
   if (IsBrowser()) env = window;
   if (IsNode()) env = global;
   if (IsWebWorker()) env = self;
+  if (!env) throw 'unknown runtime';
   return env;
 })();
