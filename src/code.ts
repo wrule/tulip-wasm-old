@@ -44,7 +44,7 @@ function ${this.ind.name}(${this.argsCode}) {
     this.names(this.ind.input_names, '')
   }], [${
     this.names(this.ind.option_names, this.options ? 'options' : '')
-  }], ${this.ind.outputs});
+  }], ${this.ind.outputs}, align);
   return ${this.outputs ?
     `{ ${this.names(this.ind.output_names, 'outputs')} }` :
     'outputs[0]'
@@ -64,7 +64,7 @@ async function ${this.ind.name}_p(${this.argsCode}) {
     this.names(this.ind.input_names, '')
   }], [${
     this.names(this.ind.option_names, this.options ? 'options' : '')
-  }], ${this.ind.outputs});
+  }], ${this.ind.outputs}, align);
   return ${this.outputs ?
     `{ ${this.names(this.ind.output_names, 'outputs')} }` :
     'outputs[0]'
