@@ -38,8 +38,8 @@ class Code {
  * ${this.ind.full_name}
  */
 export
-async function ${this.ind.name}_p(${this.argsCode}) {
-  const outputs = await run_alone_promise(tulip_promise, ${this.ind.index}, [${
+function ${this.ind.name}(${this.argsCode}) {
+  const outputs = run_alone_sync(tulip_sync, ${this.ind.index}, [${
     this.names(this.ind.input_names, '')
   }], [${
     this.names(this.ind.option_names, this.options ? 'options' : '')
@@ -75,9 +75,10 @@ async function ${this.ind.name}_p(${this.argsCode}) {
 
 function main() {
   const full_code = `
-import { tulip_promise, run_alone_promise } from './meta';
+import { tulip_promise, run_alone_promise, tulip_sync, run_alone_sync } from './meta';
 
 ${indicators.map((ind) => new Code(ind).Code()).join('\n\n')}
+${indicators.map((ind) => new Code(ind).CodePromise()).join('\n\n')}
   `.trim() + '\n';
   fs.writeFileSync('src/indicators.ts', full_code, 'utf8');
 }
