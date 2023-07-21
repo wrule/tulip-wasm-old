@@ -181,5 +181,5 @@ void run_task(int task_index, int only_start) {
 // 批量运行任务
 void run(int start_index, int end_index) {
   for (int i = start_index; i <= end_index; ++i)
-    run_task(i);
+    run_task(i, 0);
 }
