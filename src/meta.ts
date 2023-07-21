@@ -98,3 +98,34 @@ async function run_alone_promise(
   tulip._free_current();
   return outputs;
 }
+
+export
+async function run_alone_sync(
+  tulip_promise: Promise<TulipWASM>,
+  indicator_index: number,
+  inputs: number[][],
+  options: number[],
+  outputs_size: number,
+) {
+  const tulip = await tulip_promise;
+  const size = inputs[0].length;
+  const task_index = tulip._new_task(indicator_index, size);
+  inputs.forEach((input, input_index) => {
+    for (let offset = 0; offset < size; ++offset)
+      tulip._inputs_number(task_index, input_index, offset, input[offset]);
+  });
+  options.forEach((option, offset) => tulip._options_number(task_index, offset, option));
+  tulip._run_task(task_index);
+  const outputs_offset = tulip._outputs_offset(task_index);
+  const outputs = new Array<number[]>(outputs_size);
+  for (let output_index = 0; output_index < outputs_size; ++output_index) {
+    outputs[output_index] = new Array<number>(size);
+    for (let offset = 0; offset < size; ++offset)
+      outputs[output_index][offset] = offset >= outputs_offset ?
+        tulip._outputs_number(task_index, output_index, offset) :
+        NaN;
+  }
+  outputs.push([outputs_offset]);
+  tulip._free_current();
+  return outputs;
+}
