@@ -100,14 +100,13 @@ async function run_alone_promise(
 }
 
 export
-async function run_alone_sync(
-  tulip_promise: Promise<TulipWASM>,
+function run_alone_sync(
+  tulip: TulipWASM,
   indicator_index: number,
   inputs: number[][],
   options: number[],
   outputs_size: number,
 ) {
-  const tulip = await tulip_promise;
   const size = inputs[0].length;
   const task_index = tulip._new_task(indicator_index, size);
   inputs.forEach((input, input_index) => {
