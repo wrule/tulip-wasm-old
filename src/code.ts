@@ -24,6 +24,12 @@ class Code {
     }).join(', ');
   }
 
+  private get optionsCode() {
+    return this.options ?
+      `options: { ${this.names(this.ind.option_names)} }` :
+      this.names(this.ind.option_names);
+  }
+
   private get argsCode() {
     const inputs = this.names(this.ind.input_names, 'number[]');
     const options = this.options ?
