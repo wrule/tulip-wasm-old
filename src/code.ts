@@ -32,11 +32,8 @@ class Code {
 
   private get argsCode() {
     const inputs = this.names(this.ind.input_names, 'number[]');
-    const options = this.options ?
-      `options: { ${this.names(this.ind.option_names)} }` :
-      this.names(this.ind.option_names);
     const align = 'align: boolean | number = false';
-    return [inputs, options, align].filter((item) => item).join(', ');
+    return [inputs, this.optionsCode, align].filter((item) => item).join(', ');
   }
 
   public Code() {
