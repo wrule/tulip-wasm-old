@@ -150,3 +150,17 @@ function run_alone_sync(
   tulip._free_current();
   return outputs;
 }
+
+export
+function run_get_start(
+  indicator_index: number,
+  options: number[],
+) {
+  const tulip: TulipWASM = Global.tulip_wasm;
+  const task_index = tulip._new_task(indicator_index, 0);
+  options.forEach((option, offset) => tulip._options_number(task_index, offset, option));
+  tulip._run_task(task_index, 1);
+  const outputs_offset = tulip._outputs_offset(task_index);
+  tulip._free_current();
+  return outputs_offset;
+}
