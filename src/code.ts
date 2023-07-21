@@ -75,6 +75,7 @@ async function ${this.ind.name}_p(${this.argsCode}) {
 
 function main() {
   const full_code = `
+export * from './meta';
 import { tulip_promise, run_alone_promise, tulip_sync, run_alone_sync } from './meta';
 
 ${indicators.map((ind) => new Code(ind).Code()).join('\n\n')}
