@@ -120,6 +120,7 @@ function run_alone_sync(
   inputs: number[][],
   options: number[],
   outputs_size: number,
+  align: boolean | number = false,
 ) {
   const tulip: TulipWASM = Global.tulip_wasm;
   const size = inputs[0].length;
