@@ -155,10 +155,14 @@ void link_task(int task_index) {
 }
 
 // 运行任务
-void run_task(int task_index) {
-  link_task(task_index);
+void run_task(int task_index, int only_start) {
   Task * task = &task_list[task_index];
   ti_indicator_info * indicator = &ti_indicators[task->indicator_index];
+  if (only_start) {
+    task->outputs_offset = indicator->start(task->options);
+    return;
+  }
+  link_task(task_index);
   task->outputs_offset = task->inputs_offset + indicator->start(task->options);
   const TI_REAL * inputs[DATA_MAX];
   TI_REAL * outputs[DATA_MAX];
