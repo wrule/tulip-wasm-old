@@ -57,17 +57,17 @@ interface TulipWASM {
 }
 
 export
-const tulip_p: Promise<TulipWASM> = tulip_wasm();
+const tulip_promise: Promise<TulipWASM> = tulip_wasm();
 
 export
 async function run_alone_p(
-  tulip_p: Promise<TulipWASM>,
+  tulip_promise: Promise<TulipWASM>,
   indicator_index: number,
   inputs: number[][],
   options: number[],
   outputs_size: number,
 ) {
-  const tulip = await tulip_p;
+  const tulip = await tulip_promise;
   const size = inputs[0].length;
   const task_index = tulip._new_task(indicator_index, size);
   inputs.forEach((input, input_index) => {
