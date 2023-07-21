@@ -90,6 +90,7 @@ async function run_alone_promise(
   inputs: number[][],
   options: number[],
   outputs_size: number,
+  align: boolean | number = false,
 ) {
   const tulip = await tulip_promise;
   const size = inputs[0].length;
@@ -109,6 +110,7 @@ async function run_alone_promise(
         tulip._outputs_number(task_index, output_index, offset) :
         NaN;
   }
+  if (align !== true) _align(outputs, align === false ? size - outputs_offset : align);
   outputs.push([outputs_offset]);
   tulip._free_current();
   return outputs;
