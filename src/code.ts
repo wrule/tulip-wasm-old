@@ -29,7 +29,8 @@ class Code {
     const options = this.options ?
       `options: { ${this.names(this.ind.option_names)} }` :
       this.names(this.ind.option_names);
-    return [inputs, options].filter((item) => item).join(', ');
+    const align = 'align: boolean | number = false';
+    return [inputs, options, align].filter((item) => item).join(', ');
   }
 
   public Code() {
