@@ -56,7 +56,7 @@ interface TulipWASM {
   _inputs_offset: (task_index: number) => number;
   _outputs_offset: (task_index: number) => number;
   _link_task: (task_index: number) => void,
-  _run_task: (task_index: number) => void,
+  _run_task: (task_index: number, only_start: number) => void,
   _run: (start_index: number, end_index: number) => void,
 }
 
@@ -103,7 +103,7 @@ async function run_alone_promise(
       tulip._inputs_number(task_index, input_index, offset, input[offset]);
   });
   options.forEach((option, offset) => tulip._options_number(task_index, offset, option));
-  tulip._run_task(task_index);
+  tulip._run_task(task_index, 0);
   const outputs_offset = tulip._outputs_offset(task_index);
   const outputs = new Array<number[]>(outputs_size);
   for (let output_index = 0; output_index < outputs_size; ++output_index) {
@@ -135,7 +135,7 @@ function run_alone_sync(
       tulip._inputs_number(task_index, input_index, offset, input[offset]);
   });
   options.forEach((option, offset) => tulip._options_number(task_index, offset, option));
-  tulip._run_task(task_index);
+  tulip._run_task(task_index, 0);
   const outputs_offset = tulip._outputs_offset(task_index);
   const outputs = new Array<number[]>(outputs_size);
   for (let output_index = 0; output_index < outputs_size; ++output_index) {
