@@ -59,16 +59,8 @@ function ${this.ind.name}(${this.argsCode}) {
  * ${this.ind.full_name}
  */
 export
-function ${this.ind.name}(${this.argsCode}) {
-  const outputs = run_alone_sync(${this.ind.index}, [${
-    this.names(this.ind.input_names, '')
-  }], [${
-    this.names(this.ind.option_names, this.options ? 'options' : '')
-  }], ${this.ind.outputs}, align);
-  return ${this.outputs ?
-    `{ ${this.names(this.ind.output_names, 'outputs')} }` :
-    'outputs[0]'
-  };
+function ${this.ind.name}_start(${this.argsCode}) {
+
 }
     `.trim();
   }
