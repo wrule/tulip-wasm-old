@@ -60,7 +60,9 @@ function ${this.ind.name}(${this.argsCode}) {
  */
 export
 function ${this.ind.name}_start(${this.argsCode}) {
-
+  return run_get_start(${this.ind.index}, [${
+    this.names(this.ind.option_names, this.options ? 'options' : '')
+  }]);
 }
     `.trim();
   }
@@ -92,6 +94,8 @@ export * from './meta';
 import { tulip_promise, run_alone_promise, run_alone_sync, run_get_start } from './meta';
 
 ${indicators.map((ind) => new Code(ind).Code()).join('\n\n')}
+
+${indicators.map((ind) => new Code(ind).CodeStart()).join('\n\n')}
 
 ${indicators.map((ind) => new Code(ind).CodePromise()).join('\n\n')}
   `.trim() + '\n';
