@@ -66,9 +66,10 @@ export
 async function init() {
   if (Global.tulip_wasm) return;
   initializing++;
-  initializing === 1 && console.log('initialize tulip-wasm...');
+  const log = initializing === 1;
+  log && console.log('initialize tulip-wasm...');
   Global.tulip_wasm = await tulip_promise;
-  initializing === 1 && console.log('initialization successful');
+  log && console.log('initialization successful');
 }
 
 init();
