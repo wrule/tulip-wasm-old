@@ -59,6 +59,15 @@ interface TulipWASM {
 export
 const tulip_promise: Promise<TulipWASM> = tulip_wasm();
 
+let _tulip_sync!: TulipWASM;
+export
+const tulip_sync = _tulip_sync;
+
+export
+async function init() {
+  _tulip_sync = await tulip_promise;
+}
+
 export
 async function run_alone_promise(
   tulip_promise: Promise<TulipWASM>,
