@@ -39,7 +39,7 @@ class Code {
  */
 export
 function ${this.ind.name}(${this.argsCode}) {
-  const outputs = run_alone_sync(tulip_sync, ${this.ind.index}, [${
+  const outputs = run_alone_sync(${this.ind.index}, [${
     this.names(this.ind.input_names, '')
   }], [${
     this.names(this.ind.option_names, this.options ? 'options' : '')
@@ -76,7 +76,7 @@ async function ${this.ind.name}_p(${this.argsCode}) {
 function main() {
   const full_code = `
 export * from './meta';
-import { tulip_promise, run_alone_promise, tulip_sync, run_alone_sync } from './meta';
+import { tulip_promise, run_alone_promise, run_alone_sync } from './meta';
 
 ${indicators.map((ind) => new Code(ind).Code()).join('\n\n')}
 
