@@ -1,4 +1,5 @@
 import tulip_wasm from './tulip_wasm';
+import { Global } from './utils';
 
 export
 interface Indicator {
@@ -59,15 +60,11 @@ interface TulipWASM {
 export
 const tulip_promise: Promise<TulipWASM> = tulip_wasm();
 
-let _tulip_sync!: TulipWASM;
-export
-const tulip_sync = _tulip_sync;
-
 export
 async function init() {
-  if (_tulip_sync) return;
+  if (Global.tulip_wasm) return;
   console.log('initialize tulip-wasm...');
-  _tulip_sync = await tulip_promise;
+  Global.tulip_wasm = await tulip_promise;
   console.log('initialization successful');
 }
 
@@ -106,12 +103,12 @@ async function run_alone_promise(
 
 export
 function run_alone_sync(
-  tulip: TulipWASM,
   indicator_index: number,
   inputs: number[][],
   options: number[],
   outputs_size: number,
 ) {
+  const tulip: TulipWASM = Global.tulip_wasm;
   const size = inputs[0].length;
   const task_index = tulip._new_task(indicator_index, size);
   inputs.forEach((input, input_index) => {
