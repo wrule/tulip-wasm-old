@@ -1,7 +1,10 @@
 import * as tulip from '.';
 
 async function main() {
-  console.log(await tulip.sma_p([1, 2, 3, 5], 2));
+  let a = undefined;
+  let b = a;
+  a = { name: 'kkkk' };
+  console.log(b);
 }
 
 main();
