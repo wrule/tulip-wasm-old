@@ -32,7 +32,7 @@ class Code {
     return [inputs, options].filter((item) => item).join(', ');
   }
 
-  public Code() {
+  public CodePromise() {
     return `
 /**
  * ${this.ind.full_name}
