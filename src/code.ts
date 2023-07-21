@@ -65,7 +65,7 @@ function ${this.ind.name}(${this.argsCode}) {
  * ${this.ind.full_name}
  */
 export
-function ${this.ind.name}_start(${this.argsCode}) {
+function ${this.ind.name}_start(${this.optionsCode}) {
   return run_get_start(${this.ind.index}, [${
     this.names(this.ind.option_names, this.options ? 'options' : '')
   }]);
