@@ -136,6 +136,6 @@ output/
 *.zip
 *.tar.gz
 
-tulip_wasm.js
-indicators.json
+src/tulip_wasm.js
+src/indicators.json
 src/indicators.ts
