@@ -65,8 +65,13 @@ const tulip_sync = _tulip_sync;
 
 export
 async function init() {
+  if (_tulip_sync) return;
+  console.log('initialize tulip-wasm...');
   _tulip_sync = await tulip_promise;
+  console.log('initialization successful');
 }
+
+init();
 
 export
 async function run_alone_promise(
