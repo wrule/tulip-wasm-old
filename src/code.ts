@@ -38,7 +38,7 @@ class Code {
  * ${this.ind.full_name}
  */
 export
-async function ${this.ind.name}(${this.argsCode}) {
+async function ${this.ind.name}_p(${this.argsCode}) {
   const outputs = await run_alone_promise(tulip_promise, ${this.ind.index}, [${
     this.names(this.ind.input_names, '')
   }], [${
