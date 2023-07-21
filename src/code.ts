@@ -78,6 +78,7 @@ function main() {
 import { tulip_promise, run_alone_promise, tulip_sync, run_alone_sync } from './meta';
 
 ${indicators.map((ind) => new Code(ind).Code()).join('\n\n')}
+
 ${indicators.map((ind) => new Code(ind).CodePromise()).join('\n\n')}
   `.trim() + '\n';
   fs.writeFileSync('src/indicators.ts', full_code, 'utf8');
