@@ -32,6 +32,26 @@ class Code {
     return [inputs, options].filter((item) => item).join(', ');
   }
 
+  public Code() {
+    return `
+/**
+ * ${this.ind.full_name}
+ */
+export
+async function ${this.ind.name}_p(${this.argsCode}) {
+  const outputs = await run_alone_promise(tulip_promise, ${this.ind.index}, [${
+    this.names(this.ind.input_names, '')
+  }], [${
+    this.names(this.ind.option_names, this.options ? 'options' : '')
+  }], ${this.ind.outputs});
+  return ${this.outputs ?
+    `{ ${this.names(this.ind.output_names, 'outputs')} }` :
+    'outputs[0]'
+  };
+}
+    `.trim();
+  }
+
   public CodePromise() {
     return `
 /**
