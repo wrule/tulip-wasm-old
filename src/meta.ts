@@ -1,5 +1,8 @@
 import tulip_wasm from './tulip_wasm';
 import { Global } from './utils';
+import _docs from './indicators.json';
+
+export const docs = _docs;
 
 export
 interface Indicator {
