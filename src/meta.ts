@@ -60,7 +60,7 @@ export
 const tulip_promise: Promise<TulipWASM> = tulip_wasm();
 
 export
-async function run_alone_p(
+async function run_alone_promise(
   tulip_promise: Promise<TulipWASM>,
   indicator_index: number,
   inputs: number[][],
