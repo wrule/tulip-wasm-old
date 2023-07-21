@@ -60,9 +60,12 @@ interface TulipWASM {
 export
 const tulip_promise: Promise<TulipWASM> = tulip_wasm();
 
+let initializing = false;
+
 export
 async function init() {
-  if (Global.tulip_wasm) return;
+  if (Global.tulip_wasm || initializing) return;
+  initializing = true;
   console.log('initialize tulip-wasm...');
   Global.tulip_wasm = await tulip_promise;
   console.log('initialization successful');
